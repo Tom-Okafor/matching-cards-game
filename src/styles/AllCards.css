@@ -1,0 +1,159 @@
+.card-box {
+    display: grid;
+    width: clamp(200px, 90vw, 600px);
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 90px;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    align-content: center;
+    margin-inline: auto;
+}
+
+
+
+.card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    perspective: 600px;
+    border: 2px solid #fc9dfc;
+    margin-bottom: 1rem;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    cursor: pointer;
+}
+
+.card img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: fill;
+    position: absolute;
+    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+
+.card .face {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(#fcabfc33, #fcabfc33), url("assets/question-mark.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    -ms-transform: rotateY(0);
+    -o-transform: rotateY(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 7px;
+}
+
+.card.change-face img {
+    animation: unflip 500ms linear 1 forwards;
+    -webkit-animation: unflip 500ms linear 1 forwards;
+}
+
+.card.card.change-face {
+    cursor: no-drop;
+    pointer-events: none;
+}
+
+.card.card.change-face.matched {
+    border: 4px solid palevioletred;
+}
+
+.card.change-face .face {
+    animation: flip 500ms linear 1 forwards;
+    -webkit-animation: flip 500ms linear 1 forwards;
+}
+
+.card.hide-face .face {
+    transform: rotateY(180deg);
+    animation: unhide 500ms linear 1 forwards;
+    -webkit-animation: unhide 500ms linear 1 forwards;
+}
+
+.card.hide-face img {
+    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    animation: hide 500ms linear 1 forwards;
+    -webkit-animation: hide 500ms linear 1 forwards;
+}
+
+
+
+@keyframes hide {
+    to {
+        transform: rotateY(-180deg);
+        -webkit-transform: rotateY(-180deg);
+        -moz-transform: rotateY(-180deg);
+        -ms-transform: rotateY(-180deg);
+        -o-transform: rotateY(-180deg);
+    }
+
+}
+
+@keyframes unhide {
+    to {
+        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+}
+
+}
+
+@-webkit-keyframes flip {
+    to {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+    }
+}
+
+@keyframes flip {
+    to {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+    }
+}
+
+@-webkit-keyframes unflip {
+    to {
+        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+    }
+}
+
+@keyframes unflip {
+    to {
+        transform: rotateY(0deg);
+        -webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+    }
+}
