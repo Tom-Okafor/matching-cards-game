@@ -68,6 +68,6 @@ body:has(.dark) {
 
 body:has(.dark) .toggle:hover,
 body:has(.dark) .toggle:focus {
-    box-shadow: 0px 2px 15px #fa5cfa;
+    box-shadow: 0px 5px 20px #fa5cfa;
 
 }
