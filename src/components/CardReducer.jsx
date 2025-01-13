@@ -53,7 +53,6 @@ export function CardReducer(state, action) {
         ...state,
         currentSeconds: 0,
         gameStarted: false,
-        matchesMade: 0,
         fastestSeconds:
           state.fastestSeconds === 0
             ? state.currentSeconds
@@ -89,5 +88,7 @@ export function CardReducer(state, action) {
         ...state,
         SHUFFLED_IMAGES: shuffleImages(),
       };
+    case "Clear Matches Made":
+      return { ...state, matchesMade: 0 };
   }
 }
