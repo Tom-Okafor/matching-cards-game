@@ -60,3 +60,7 @@ h4 {
     max-width: 50ch;
     text-align: center;
 }
+
+body:has(.dark) *:not(h1){
+    color: #d88e45;
+}
