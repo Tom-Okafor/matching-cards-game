@@ -9,13 +9,24 @@ const CardContext = createContext();
 function App() {
   const [state, dispatch] = useReducer(CardReducer, initialCardState);
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  const [displayMode, setDisplayMode] = useState(mediaQuery.matches);
+  const [displaySettings, setDisplaySettings] = useState({
+    isDarkModePreferred: mediaQuery.matches,
+    isDarkModeSaved: localStorage.prefferedMode,
+  });
   function changeDisplayMode() {
-    setDisplayMode((prevMode) => !prevMode);
+    setDisplaySettings(({ isDarkModePreferred, isDarkModeSaved }) => {
+      return {
+        isDarkModePreferred: !isDarkModePreferred,
+        isDarkModeSaved: null,
+      };
+    });
   }
 
+  const { isDarkModePreferred, isDarkModeSaved } = displaySettings;
   return (
-    <div className={displayMode ? "dark" : ""}>
+    <div
+      className={isDarkModeSaved ? "dark" : isDarkModePreferred ? "dark" : ""}
+    >
       <h1>Matching pairs game</h1>
       <img
         src="/assets/mode.svg"
