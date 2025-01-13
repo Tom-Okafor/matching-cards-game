@@ -89,6 +89,11 @@ export function CardReducer(state, action) {
         SHUFFLED_IMAGES: shuffleImages(),
       };
     case "Clear Matches Made":
-      return { ...state, matchesMade: 0 };
+      return {
+        ...state,
+        matchesMade: 0,
+        alert:
+          "Click the start button and then click on the cards to flip them over and find the matching pairs.",
+      };
   }
 }
