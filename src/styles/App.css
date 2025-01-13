@@ -41,7 +41,9 @@ h1 {
 
 .toggle:hover,
 .toggle:focus {
-    padding: 5px;
+    height: 40px;
+    width: 40px;
+    padding: 7px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
