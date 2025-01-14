@@ -39,7 +39,7 @@ export function shuffleImages() {
 }
 const SHUFFLED_IMAGES = shuffleImages();
 
-const CREATE_SHUFFLED_IMAGE_COLLECTION = (level = "easy") => {
+export const CREATE_SHUFFLED_IMAGE_COLLECTION = (level = "easy") => {
   let numOfImagesNeeded;
   switch (level) {
     case "easy":
@@ -80,6 +80,8 @@ export const initialCardState = {
   gameStarted: false,
   currentSeconds: 0,
   fastestSeconds: 0,
+  level: "easy",
+  totalMatchesNeeded: 4,
   SHUFFLED_IMAGES: CREATE_SHUFFLED_IMAGE_COLLECTION(),
   alert:
     "Click the start button and then click on the cards to flip them over and find the matching pairs.",

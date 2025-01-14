@@ -3,11 +3,16 @@ import { useContext, useEffect } from "react";
 import { CardContext } from "./App";
 
 function GameRecords() {
-  const totalMatchesNeeded = 8;
   const { state, dispatch } = useContext(CardContext);
 
-  const { currentSeconds, fastestSeconds, gameStarted, matchesMade, alert } =
-    state;
+  const {
+    currentSeconds,
+    fastestSeconds,
+    gameStarted,
+    matchesMade,
+    alert,
+    totalMatchesNeeded,
+  } = state;
 
   useEffect(() => {
     if (gameStarted) {
@@ -36,6 +41,7 @@ function GameRecords() {
         <h3>Current Time: {currentSeconds}</h3>
         <h3>Fastest Time: {fastestSeconds ? fastestSeconds : "N/A"}</h3>
       </div>
+
       <form action="">
         <label htmlFor="level" id="label">
           Please, select preferred level:
