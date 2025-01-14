@@ -64,8 +64,46 @@ body:has(.dark) *:not(h1) {
 
 h4,
 h3,
-button {
+button,
+label,
+option,
+select {
     font-size: 1.1rem;
     letter-spacing: 2.5px;
     line-height: 1.8rem;
+}
+
+form {
+    display: flex;
+    gap: 2rem;
+}
+
+label#label {
+    font-size: 1.3rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #fa5cfa;
+    letter-spacing: 3px;
+
+}
+
+select#level {
+    background-color: transparent;
+    outline: 2px solid #fa5cfa;
+    border: none;
+    color: #fa5cfa;
+    padding-inline: 5px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+}
+
+#level > option {
+    background-color: black;
+    padding: 10px 7px;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    color: #fa5cfa;
 }
