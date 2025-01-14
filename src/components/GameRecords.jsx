@@ -34,7 +34,7 @@ function GameRecords() {
         dispatch({ type: "Clear Matches Made" });
       }, 3000);
     }
-  }, [matchesMade, dispatch]);
+  }, [matchesMade, totalMatchesNeeded, dispatch]);
   return (
     <section className="records">
       <div className="scores">
@@ -46,7 +46,16 @@ function GameRecords() {
         <label htmlFor="level" id="label">
           Please, select preferred level:
         </label>
-        <select name="level" id="level" role="listbox" aria-labelledby="label">
+        <select
+          name="level"
+          id="level"
+          role="listbox"
+          aria-labelledby="label"
+          onChange={(event) => {
+            dispatch({ type: "Start New Level", payload: event.target.value });
+            dispatch({ type: "Update Total Matches Needed" });
+          }}
+        >
           <option value="easy" role="option">
             easy
           </option>
