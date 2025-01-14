@@ -37,6 +37,21 @@ function GameRecords() {
         <h3>Fastest Time: {fastestSeconds ? fastestSeconds : "N/A"}</h3>
       </div>
 
+      <label htmlFor="level" id="label">
+        Please, select preferred level:
+      </label>
+      <select name="level" id="level" role="listbox" aria-labelledby="label">
+        <option value="easy" role="option">
+          easy
+        </option>
+        <option value="intermediate" role="option">
+          intermediate
+        </option>
+        <option value="hard" role="option">
+          hard
+        </option>
+      </select>
+
       <div className="buttons">
         <button
           onClick={() => {
